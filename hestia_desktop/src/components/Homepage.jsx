@@ -1,9 +1,12 @@
 import React from 'react'
 
+import Header from './Header'
+
 function Homepage() {
     return (
         <div>
-            <h1>Home page layout</h1>
+            <h1>Hestia</h1>
+            <Header/>
         </div>
     )
 }

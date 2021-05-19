@@ -2,15 +2,15 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 
-function Navbar() {
+function Nav() {
     return (
         <nav>
             <ul>
                 <li>
-                    <Link to='/'>Home</Link>
+                    {/* <Link to='/'>Home</Link> */}
                 </li>
                 <li>
-                    <Link to='/'>Login</Link>
+                    {/* <Link to='/'>Login</Link> */}
                 </li>
             </ul>
             <a href="">Home</a>

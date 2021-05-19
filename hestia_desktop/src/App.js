@@ -4,13 +4,14 @@ import React from 'react'
 // import components
 import Nav from './components/Nav'
 import Homepage from './components/Homepage'
+import Homes from './components/Homes'
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <Nav />
-      <h1>Hestia</h1>
       <Homepage />
+      <Homes />
     </div>
   )
 }
