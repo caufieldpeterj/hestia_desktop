@@ -1,11 +1,11 @@
 import Home from './Home'
 
-const Homes = ({homes}) => {
+const Homes = ({homes, onDelete}) => {
     
     return (
         <>
             {homes.map((home) => (
-                <h3 key={homes.id}>{home.price}</h3>
+                <Home key={homes.id} home={home} onDelete={onDelete}/>
             ))}
         </>
     )
