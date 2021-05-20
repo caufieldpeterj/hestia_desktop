@@ -6,6 +6,8 @@ import { useState } from 'react';
 import Nav from './components/Nav'
 import Homepage from './components/Homepage'
 import Homes from './components/Homes'
+import AddHome from './components/AddHome'
+
 
 function App() {
   const [homes, setHomes] = useState([
@@ -29,18 +31,35 @@ function App() {
     },
   ])
 
-  // delete task
-  const deleteHome = (id) => {
-    setHomes(homes.filter((home)=> home.id !== id))
+  // add home
+  const addHome = (home) => {
+    const id = Math.floor(Math.random()*100000) + 1;
+    const newHome = { id, ...home }
+    setHomes([...homes, newHome])
   }
 
-  // toggle Reminder
+
+  // delete home
+  const deleteHome = (id) => {
+    setHomes(homes.filter((home) => home.id !== id))
+  }
+
+  // toggle reminder
+  const toggleReminder = (id) => {
+    setHomes(
+      homes.map((home) => 
+        home.id === id ? {...home, reminder: !home.reminder}:home
+      )
+    )
+  }
+
 
   return (
     <div className="container">
       <Nav />
       <Homepage />
-      <Homes homes={homes} onDelete={deleteHome} />
+      <AddHome onAdd={addHome}/>
+      <Homes homes={homes} onDelete={deleteHome} onToggle={toggleReminder} />
     </div>
   )
 }
